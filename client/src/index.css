@@ -11,9 +11,9 @@ html.dark, body.dark, .dark {
   color: #f4f4f5;
 }
 
-html.light {
-  color-scheme: light;
-  background-color: #f8fafc;
+html.light, body.light, .light {
+  background-color: #f8fafc !important;
+  color: #0f172a;
 }
 
 body {

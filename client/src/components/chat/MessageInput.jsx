@@ -418,7 +418,7 @@ const MessageInput = ({
         </div>
       ) : (
         /* Normal Input Container */
-        <div className="relative flex items-end gap-2 rounded-2xl bg-[#161a22]/90 backdrop-blur-xl border border-white/10 focus-within:border-indigo-500/60 shadow-[0_4px_20px_rgba(0,0,0,0.5)] transition-all duration-200 px-3.5 py-2.5">
+        <div className="relative flex items-end gap-2 rounded-2xl bg-white dark:bg-[#161a22]/90 backdrop-blur-xl border border-slate-200 dark:border-white/10 focus-within:border-indigo-600 dark:focus-within:border-indigo-500/60 shadow-md dark:shadow-[0_4px_20px_rgba(0,0,0,0.5)] transition-all duration-200 px-3.5 py-2.5">
           {/* Hidden File Input */}
           <input
             ref={fileInputRef}

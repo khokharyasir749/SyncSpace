@@ -1184,7 +1184,7 @@ const Dashboard = () => {
       {/* ========================================================================= */}
       {/* COLUMN 1: Workspace Rail (Leftmost)                                       */}
       {/* ========================================================================= */}
-      <aside className="w-[72px] shrink-0 bg-[#13161c]/90 backdrop-blur-2xl border-r border-white/[0.07] shadow-[4px_0_24px_rgba(0,0,0,0.1)] flex flex-col items-center py-4 gap-3 z-30 select-none">
+      <aside className="w-[72px] shrink-0 bg-white/90 dark:bg-[#13161c]/90 backdrop-blur-2xl border-r border-slate-200/80 dark:border-white/[0.07] shadow-sm flex flex-col items-center py-4 gap-3 z-30 select-none">
         {/* SyncSpace Brand Icon */}
         <button
           type="button"
@@ -1195,7 +1195,7 @@ const Dashboard = () => {
           <Logo size="md" />
         </button>
 
-        <div className="w-8 h-[1px] bg-white/10 my-1" />
+        <div className="w-8 h-[1px] bg-slate-200 dark:bg-white/10 my-1" />
 
         {/* Workspaces List */}
         <div className="flex-1 w-full overflow-y-auto flex flex-col items-center gap-3 no-scrollbar">
@@ -1222,7 +1222,7 @@ const Dashboard = () => {
                   className={`w-12 h-12 rounded-2xl flex items-center justify-center font-bold text-sm transition-all duration-200 cursor-pointer ${
                     isActive
                       ? 'bg-gradient-to-r from-indigo-500 to-violet-600 text-white rounded-2xl shadow-[0_0_20px_rgba(99,102,241,0.4)] border border-white/20 scale-105'
-                      : 'bg-slate-900/60 text-slate-400 hover:bg-slate-800/80 hover:text-slate-100 rounded-3xl hover:rounded-2xl border border-white/5'
+                      : 'bg-slate-200/80 dark:bg-slate-900/60 text-slate-700 dark:text-slate-400 hover:bg-slate-300/80 dark:hover:bg-slate-800/80 hover:text-slate-900 dark:hover:text-slate-100 rounded-3xl hover:rounded-2xl border border-slate-300/50 dark:border-white/5'
                   }`}
                 >
                   {initials || 'WS'}
@@ -1235,7 +1235,7 @@ const Dashboard = () => {
           <button
             onClick={() => setIsWorkspaceModalOpen(true)}
             title="Create Workspace"
-            className="w-12 h-12 rounded-3xl hover:rounded-2xl bg-slate-900/40 hover:bg-emerald-500/20 text-slate-400 hover:text-emerald-400 border border-white/5 hover:border-emerald-500/30 flex items-center justify-center transition-all cursor-pointer group shadow-sm backdrop-blur-md"
+            className="w-12 h-12 rounded-3xl hover:rounded-2xl bg-slate-200/60 dark:bg-slate-900/40 hover:bg-emerald-500/20 text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 border border-slate-300/60 dark:border-white/5 hover:border-emerald-500/30 flex items-center justify-center transition-all cursor-pointer group shadow-sm backdrop-blur-md"
           >
             <Plus className="w-5 h-5 group-hover:scale-110 transition-transform" />
           </button>
@@ -1250,7 +1250,7 @@ const Dashboard = () => {
             className={`w-12 h-12 rounded-3xl hover:rounded-2xl flex items-center justify-center transition-all cursor-pointer group shadow-sm ${
               activeView === 'calls'
                 ? 'bg-gradient-to-r from-indigo-500 to-violet-600 text-white rounded-2xl shadow-[0_0_20px_rgba(99,102,241,0.4)] border border-white/20 scale-105'
-                : 'bg-slate-900/60 text-slate-400 hover:bg-slate-800/80 hover:text-slate-100 border border-white/5'
+                : 'bg-slate-200/80 dark:bg-slate-900/60 text-slate-700 dark:text-slate-400 hover:bg-slate-300/80 dark:hover:bg-slate-800/80 hover:text-slate-900 dark:hover:text-slate-100 border border-slate-300/50 dark:border-white/5'
             }`}
           >
             <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -1272,12 +1272,12 @@ const Dashboard = () => {
       {/* COLUMN 2: Channels & DMs Sidebar                                          */}
       {/* ========================================================================= */}
       <nav
-        className={`w-64 sm:w-72 shrink-0 bg-[#11141a]/85 backdrop-blur-2xl border-r border-white/[0.07] shadow-[4px_0_30px_rgba(0,0,0,0.15)] flex flex-col z-20 transition-all duration-300 absolute sm:relative h-full ${
+        className={`w-64 sm:w-72 shrink-0 bg-slate-50/90 dark:bg-[#11141a]/85 backdrop-blur-2xl border-r border-slate-200/80 dark:border-white/[0.07] shadow-sm flex flex-col z-20 transition-all duration-300 absolute sm:relative h-full ${
           mobileSidebarOpen ? 'left-[72px]' : '-left-full sm:left-0'
         }`}
       >
         {/* Workspace Title Header */}
-        <div className="h-16 px-4 border-b border-white/[0.07] flex items-center justify-between bg-[#13161c]/85 backdrop-blur-2xl shadow-sm">
+        <div className="h-16 px-4 border-b border-slate-200/80 dark:border-white/[0.07] flex items-center justify-between bg-white/95 dark:bg-[#13161c]/85 backdrop-blur-2xl shadow-sm">
           <div className="min-w-0 flex-1">
             <h2 className="font-bold text-sm text-slate-800 dark:text-slate-100 truncate tracking-tight">
               {activeWorkspace?.name || 'SyncSpace Workspace'}
@@ -1364,12 +1364,12 @@ const Dashboard = () => {
                       onClick={() => handleSelectChannel(ch)}
                       className={`w-full flex items-center justify-between px-2.5 py-2 rounded-xl text-sm font-medium transition-all text-left cursor-pointer group ${
                         isActive
-                          ? 'bg-indigo-500/15 border border-indigo-500/40 text-white shadow-[0_0_12px_rgba(99,102,241,0.25)] font-semibold rounded-xl'
+                          ? 'bg-indigo-50 dark:bg-indigo-500/15 border border-indigo-200 dark:border-indigo-500/40 text-indigo-900 dark:text-white shadow-sm dark:shadow-[0_0_12px_rgba(99,102,241,0.25)] font-semibold rounded-xl'
                           : unread > 0
-                          ? 'text-white bg-slate-800/90 font-bold border border-emerald-500/30 shadow-sm'
+                          ? 'text-slate-900 dark:text-white bg-emerald-50 dark:bg-slate-800/90 font-bold border border-emerald-500/30 shadow-sm'
                           : isCallActive
-                          ? 'text-emerald-300 bg-emerald-950/30 font-semibold border border-emerald-500/30'
-                          : 'text-slate-300 hover:bg-slate-800/60 hover:text-slate-100'
+                          ? 'text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/30 font-semibold border border-emerald-500/30'
+                          : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-slate-100'
                       }`}
                     >
                       <div className="flex items-center gap-2.5 min-w-0">
@@ -1443,10 +1443,10 @@ const Dashboard = () => {
                     onClick={() => handleSelectDm(member)}
                     className={`w-full flex items-center justify-between px-2.5 py-2 rounded-xl text-sm font-medium transition-all text-left cursor-pointer group ${
                       isActive
-                        ? 'bg-indigo-500/15 border border-indigo-500/40 text-white shadow-[0_0_12px_rgba(99,102,241,0.25)] font-semibold rounded-xl'
+                        ? 'bg-indigo-50 dark:bg-indigo-500/15 border border-indigo-200 dark:border-indigo-500/40 text-indigo-900 dark:text-white shadow-sm dark:shadow-[0_0_12px_rgba(99,102,241,0.25)] font-semibold rounded-xl'
                         : unread > 0
-                        ? 'text-white bg-slate-800/90 font-bold border border-emerald-500/30 shadow-sm'
-                        : 'text-slate-300 hover:bg-slate-800/60 hover:text-slate-100'
+                        ? 'text-slate-900 dark:text-white bg-emerald-50 dark:bg-slate-800/90 font-bold border border-emerald-500/30 shadow-sm'
+                        : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-slate-100'
                     }`}
                   >
                     <div className="flex items-center gap-2.5 min-w-0">
@@ -1503,7 +1503,7 @@ const Dashboard = () => {
         </div>
 
         {/* Bottom User Profile Drawer */}
-        <div className="h-16 px-3.5 border-t border-white/5 bg-slate-950/80 backdrop-blur-xl flex items-center justify-between">
+        <div className="h-16 px-3.5 border-t border-slate-200/80 dark:border-white/5 bg-white/95 dark:bg-slate-950/80 backdrop-blur-xl flex items-center justify-between">
           <div className="flex items-center gap-2.5 min-w-0">
             <div className="relative shrink-0">
               <Avatar
@@ -1511,12 +1511,12 @@ const Dashboard = () => {
                 name={user?.name}
                 className="w-8 h-8 rounded-xl"
               />
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_10px_#10b981] border-2 border-slate-950 absolute -bottom-0.5 -right-0.5" />
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_10px_#10b981] border-2 border-white dark:border-slate-950 absolute -bottom-0.5 -right-0.5" />
             </div>
             <div className="min-w-0">
-              <p className="text-xs font-semibold text-slate-100 truncate">{user?.name}</p>
-              <p className="text-[10px] text-emerald-400 flex items-center gap-1 font-medium truncate" title={user?.statusText || 'Active'}>
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0 shadow-[0_0_8px_#10b981]" />
+              <p className="text-xs font-semibold text-slate-900 dark:text-slate-100 truncate">{user?.name}</p>
+              <p className="text-[10px] text-emerald-600 dark:text-emerald-400 flex items-center gap-1 font-medium truncate" title={user?.statusText || 'Active'}>
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 shadow-[0_0_8px_#10b981]" />
                 <span className="truncate">{user?.statusText || 'Active'}</span>
               </p>
             </div>
@@ -1526,14 +1526,14 @@ const Dashboard = () => {
             <button
               onClick={() => setIsProfileModalOpen(true)}
               title="Edit Profile"
-              className="p-1.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
+              className="p-1.5 rounded-xl text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800 transition-colors cursor-pointer"
             >
               <Settings className="w-4 h-4" />
             </button>
             <button
               onClick={logout}
               title="Sign Out"
-              className="p-1.5 rounded-xl text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors cursor-pointer"
+              className="p-1.5 rounded-xl text-slate-500 dark:text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 hover:bg-rose-500/10 transition-colors cursor-pointer"
             >
               <LogOut className="w-4 h-4" />
             </button>
@@ -1670,12 +1670,12 @@ const Dashboard = () => {
             <button
               type="button"
               onClick={() => setIsQuickSearchOpen(true)}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/70 backdrop-blur-md border border-white/10 hover:border-indigo-500/40 text-xs text-slate-300 hover:text-slate-100 transition-all cursor-pointer shadow-md"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-900/70 backdrop-blur-md border border-slate-200 dark:border-white/10 hover:border-indigo-500/40 text-xs text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 transition-all cursor-pointer shadow-sm"
               title="Search Workspace (Ctrl + K)"
             >
-              <Search className="w-3.5 h-3.5 text-slate-400" />
+              <Search className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" />
               <span className="hidden sm:inline">Search</span>
-              <kbd className="hidden sm:inline px-1.5 py-0.5 text-[10px] bg-slate-800 border border-white/10 rounded text-slate-300 font-mono">⌘K</kbd>
+              <kbd className="hidden sm:inline px-1.5 py-0.5 text-[10px] bg-white dark:bg-slate-800 border border-slate-200 dark:border-white/10 rounded text-slate-600 dark:text-slate-300 font-mono">⌘K</kbd>
             </button>
 
             <button
@@ -1683,8 +1683,8 @@ const Dashboard = () => {
               onClick={() => setIsPinnedDrawerOpen((prev) => !prev)}
               className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-xs font-semibold transition-colors cursor-pointer border ${
                 pinnedMessages.length > 0
-                  ? 'bg-amber-500/10 text-amber-400 border-amber-500/30 hover:bg-amber-500/20'
-                  : 'bg-slate-900/70 backdrop-blur-md text-slate-400 border-white/10 hover:text-white'
+                  ? 'bg-amber-500/10 text-amber-500 dark:text-amber-400 border-amber-500/30 hover:bg-amber-500/20'
+                  : 'bg-slate-100 dark:bg-slate-900/70 backdrop-blur-md text-slate-600 dark:text-slate-400 border-slate-200 dark:border-white/10 hover:text-slate-900 dark:hover:text-white'
               }`}
               title="Pinned Messages"
             >
@@ -1695,10 +1695,10 @@ const Dashboard = () => {
             <button
               type="button"
               onClick={() => setSoundEnabled((prev) => !prev)}
-              className="p-2 rounded-xl bg-slate-900/70 backdrop-blur-md hover:bg-slate-800 text-slate-300 hover:text-white transition-colors cursor-pointer border border-white/10"
+              className="p-2 rounded-xl bg-slate-100 dark:bg-slate-900/70 backdrop-blur-md hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer border border-slate-200 dark:border-white/10"
               title={soundEnabled ? 'Mute Sound Effects' : 'Unmute Sound Effects'}
             >
-              {soundEnabled ? <Volume2 className="w-4 h-4 text-indigo-400" /> : <VolumeX className="w-4 h-4 text-slate-500" />}
+              {soundEnabled ? <Volume2 className="w-4 h-4 text-indigo-600 dark:text-indigo-400" /> : <VolumeX className="w-4 h-4 text-slate-500" />}
             </button>
 
             <button
