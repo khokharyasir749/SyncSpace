@@ -42,3 +42,96 @@ SyncSpace aik modern, high-performance team collaboration platform hai jo Slack-
 ---
 
 ## 📂 Project Architecture
+
+```
+Sync-Space/
+├── client/                      # React frontend application (Vite)
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── calling/        # WebRTC call modals, floating huddle bar, call logs
+│   │   │   ├── chat/           # MessageFeed, waveform player, MessageInput
+│   │   │   └── sidebar/        # Channels, Direct Messages, Workspace dock
+│   │   ├── context/            # AuthContext, SocketContext, ThemeContext
+│   │   ├── pages/              # Dashboard view & Auth pages
+│   │   └── index.css           # Global tokens & theme styles
+│   └── tailwind.config.js
+│
+└── server/                      # Node.js backend application
+    ├── controllers/            # REST API business logic
+    ├── models/                 # Database schemas (User, Workspace, Message, Call)
+    ├── routes/                 # Express API routes
+    ├── sockets/                # Real-time chat & WebRTC signaling handlers
+    └── server.js               # Entry point
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+* Node.js (v18.0.0+)
+* npm ya yarn
+* MongoDB Atlas cluster ya local MongoDB URI
+
+### 1. Backend Setup
+
+```bash
+cd server
+npm install
+```
+
+`server/` directory ke andar `.env` file banayein:
+
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_uri
+JWT_SECRET=your_jwt_secret_key
+CLIENT_URL=http://localhost:5173
+```
+
+Backend start karein:
+
+```bash
+npm run dev
+```
+
+### 2. Frontend Setup
+
+```bash
+cd ../client
+npm install
+```
+
+`client/` directory ke andar `.env` file banayein:
+
+```env
+VITE_API_URL=http://localhost:5000
+VITE_SOCKET_URL=http://localhost:5000
+```
+
+Frontend run karein:
+
+```bash
+npm run dev
+```
+
+---
+
+## 🧪 Testing & Verification
+
+Dono client aur server test suite run karein:
+
+```bash
+# Server API & Socket tests
+cd server
+npm test
+
+# Client production build
+cd ../client
+npm run build
+```
+
+---
+
+## 📄 License
+Distributed under the MIT License. See `LICENSE` for details.
